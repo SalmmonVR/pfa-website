@@ -1,4 +1,4 @@
-/* Reset and base */
+/* Reset & base */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body, html {
   background-color: black;
 }
 
-/* Loading screen */
+/* 🔄 Loading Screen */
 #loading-screen {
   position: fixed;
   top: 0;
@@ -38,55 +38,54 @@ body, html {
   margin-bottom: 10px;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 #loading-screen p {
   font-size: 1.2rem;
   color: #ccc;
 }
 
-/* Banner Bar */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Top Banner */
 .banner-bar {
   height: 8px;
   background: linear-gradient(to right, #ff69b4, #00bfff);
-  position: relative;
   z-index: 8;
 }
 
-/* Header Styling */
+/* Header */
 header {
   position: absolute;
   top: 8px;
   width: 100%;
-  padding: 12px 40px;
+  padding: 14px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 10;
 }
 
-/* Redesigned Logo Section */
+/* 🎨 Redesigned Logo */
 .logo-link {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
   animation: fadeIn 1s ease-out forwards;
 }
 
 .logo {
-  height: 45px;
+  height: 60px;
 }
 
 .logo-text {
   color: white;
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-shadow: 0 0 5px #00bfff, 0 0 10px #ff69b4;
+  font-size: 34px;
+  font-weight: 900;
+  text-shadow: 0 0 6px #00bfff, 0 0 16px #ff69b4;
+  letter-spacing: 1.4px;
 }
 
 /* Navigation */
@@ -134,7 +133,7 @@ nav {
   display: block;
 }
 
-/* Background Video */
+/* 🔁 Background Video */
 .background-video {
   position: absolute;
   width: 100%;
@@ -142,7 +141,7 @@ nav {
   object-fit: cover;
 }
 
-/* Overlay Text */
+/* ✨ Center Overlay Text */
 .overlay-text {
   position: absolute;
   top: 50%;
@@ -154,24 +153,25 @@ nav {
 }
 
 .overlay-text .glow {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: bold;
   color: #00bfff;
   text-shadow:
-    0 0 10px #00bfff,
-    0 0 20px #00bfff,
-    0 0 40px #ff69b4,
-    0 0 60px #ff69b4;
+    0 0 12px #00bfff,
+    0 0 24px #00bfff,
+    0 0 48px #ff69b4,
+    0 0 72px #ff69b4;
   animation: flicker 2s infinite alternate;
 }
 
 .overlay-text .quote {
-  margin-top: 10px;
-  font-size: 1.6rem;
+  margin-top: 15px;
+  font-size: 2rem;
   color: #ff69b4;
-  text-shadow: 0 0 10px #ff69b4;
+  text-shadow: 0 0 12px #ff69b4;
 }
 
+/* Animations */
 @keyframes flicker {
   0% { opacity: 1; }
   45% { opacity: 0.85; }
