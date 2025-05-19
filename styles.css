@@ -2,18 +2,29 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body, html {
   height: 100%;
   overflow: hidden;
+  background-color: black;
 }
 
+/* Pink & Blue Top Banner */
+.banner-bar {
+  height: 8px;
+  background: linear-gradient(to right, #ff69b4, #00bfff);
+  position: relative;
+  z-index: 9;
+}
+
+/* Header ABOVE the banner */
 header {
   position: absolute;
+  top: 8px;
   width: 100%;
-  padding: 20px 40px;
+  padding: 10px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -80,6 +91,7 @@ nav {
   display: block;
 }
 
+/* Background video */
 .background-video {
   position: absolute;
   width: 100%;
@@ -87,21 +99,40 @@ nav {
   object-fit: cover;
 }
 
+/* Cool center text with glow */
 .overlay-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  z-index: 5;
   color: white;
 }
 
-.overlay-text h1 {
+.overlay-text .glow {
   font-size: 4rem;
+  font-weight: bold;
   color: #00bfff;
+  text-shadow:
+    0 0 10px #00bfff,
+    0 0 20px #00bfff,
+    0 0 40px #ff69b4,
+    0 0 60px #ff69b4;
+  animation: flicker 2s infinite alternate;
 }
 
-.overlay-text p {
-  font-size: 1.5rem;
+.overlay-text .quote {
+  margin-top: 10px;
+  font-size: 1.6rem;
   color: #ff69b4;
+  text-shadow: 0 0 10px #ff69b4;
+}
+
+/* Flicker animation */
+@keyframes flicker {
+  0% { opacity: 1; }
+  45% { opacity: 0.85; }
+  70% { opacity: 1; }
+  100% { opacity: 0.9; }
 }
