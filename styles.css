@@ -1,3 +1,4 @@
+/* Reset and base */
 * {
   margin: 0;
   padding: 0;
@@ -11,42 +12,84 @@ body, html {
   background-color: black;
 }
 
-/* Pink & Blue Top Banner */
+/* Loading screen */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #00bfff;
+  border-top: 6px solid #ff69b4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#loading-screen p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* Banner Bar */
 .banner-bar {
   height: 8px;
   background: linear-gradient(to right, #ff69b4, #00bfff);
   position: relative;
-  z-index: 9;
+  z-index: 8;
 }
 
-/* Header ABOVE the banner */
+/* Header Styling */
 header {
   position: absolute;
   top: 8px;
   width: 100%;
-  padding: 10px 40px;
+  padding: 12px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 10;
 }
 
-.logo-container {
+/* Redesigned Logo Section */
+.logo-link {
   display: flex;
   align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 .logo {
-  height: 40px;
-  margin-right: 10px;
+  height: 45px;
 }
 
 .logo-text {
   color: white;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px #00bfff, 0 0 10px #ff69b4;
 }
 
+/* Navigation */
 nav a,
 .dropbtn {
   color: white;
@@ -91,7 +134,7 @@ nav {
   display: block;
 }
 
-/* Background video */
+/* Background Video */
 .background-video {
   position: absolute;
   width: 100%;
@@ -99,7 +142,7 @@ nav {
   object-fit: cover;
 }
 
-/* Cool center text with glow */
+/* Overlay Text */
 .overlay-text {
   position: absolute;
   top: 50%;
@@ -129,10 +172,14 @@ nav {
   text-shadow: 0 0 10px #ff69b4;
 }
 
-/* Flicker animation */
 @keyframes flicker {
   0% { opacity: 1; }
   45% { opacity: 0.85; }
   70% { opacity: 1; }
   100% { opacity: 0.9; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

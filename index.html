@@ -7,13 +7,19 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Top Banner Bar -->
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader"></div>
+    <p>Loading PFA...</p>
+  </div>
+
+  <!-- Top Banner -->
   <div class="banner-bar"></div>
 
-  <!-- Header Section Above Banner -->
+  <!-- Header with Logo and Nav -->
   <header>
     <div class="logo-container">
-      <a href="index.html">
+      <a href="index.html" class="logo-link">
         <img src="pfa-logo.png" alt="PFA Logo" class="logo" />
         <span class="logo-text">PFA</span>
       </a>
@@ -43,5 +49,12 @@
       <p class="quote">"Only For The Best"</p>
     </div>
   </main>
+
+  <!-- JavaScript to hide loader -->
+  <script>
+    window.addEventListener("load", () => {
+      document.getElementById("loading-screen").style.display = "none";
+    });
+  </script>
 </body>
 </html>
